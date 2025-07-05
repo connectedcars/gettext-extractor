@@ -1,5 +1,3 @@
-> **Not actively maintained:** I'm looking for someone to take over this project. Email me at info@lukasgeiter.com if you're interested.
-
 # Gettext Extractor [![Tests Status][status-tests-badge]][status-tests-link]
 
 *A flexible and powerful Gettext message extractor with support for JavaScript, TypeScript, JSX and HTML*
