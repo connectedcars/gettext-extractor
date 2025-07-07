@@ -1,5 +1,3 @@
-> **Not actively maintained:** I'm looking for someone to take over this project. Email me at info@lukasgeiter.com if you're interested.
-
 # Gettext Extractor [![Tests Status][status-tests-badge]][status-tests-link]
 
 *A flexible and powerful Gettext message extractor with support for JavaScript, TypeScript, JSX and HTML*
@@ -78,9 +76,9 @@ From reporting a bug to submitting a pull request: every contribution is appreci
 Report bugs, ask questions and request features using [Github issues][github-issues].
 If you want to contribute to the code of this project, please read the [Contribution Guidelines][contributing].
 
-[status-tests-badge]: https://github.com/lukasgeiter/gettext-extractor/actions/workflows/tests.yml/badge.svg
-[status-tests-link]: https://github.com/lukasgeiter/gettext-extractor/actions/workflows/tests.yml
-[wiki]: https://github.com/lukasgeiter/gettext-extractor/wiki
-[wiki-introduction]: https://github.com/lukasgeiter/gettext-extractor/wiki/Introduction
-[github-issues]: https://github.com/lukasgeiter/gettext-extractor/issues
+[status-tests-badge]: https://github.com/connectedcars/gettext-extractor/actions/workflows/tests.yml/badge.svg
+[status-tests-link]: https://github.com/connectedcars/gettext-extractor/actions/workflows/tests.yml
+[wiki]: https://github.com/connectedcars/gettext-extractor/wiki
+[wiki-introduction]: https://github.com/connectedcars/gettext-extractor/wiki/Introduction
+[github-issues]: https://github.com/connectedcars/gettext-extractor/issues
 [contributing]: CONTRIBUTING.md
