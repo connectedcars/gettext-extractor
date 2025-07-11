@@ -135,15 +135,15 @@ test('parsing without extractors', () => {
 
     expect(() => {
         parser.parseString('');
-    }).toThrowError(ERROR_MESSAGE);
+    }).toThrow(ERROR_MESSAGE);
 
     expect(() => {
         parser.parseFile('tests/fixtures/empty.ts');
-    }).toThrowError(ERROR_MESSAGE);
+    }).toThrow(ERROR_MESSAGE);
 
     expect(() => {
         parser.parseFilesGlob('tests/fixtures/*.ts');
-    }).toThrowError(ERROR_MESSAGE);
+    }).toThrow(ERROR_MESSAGE);
 });
 
 describe('argument validation', () => {
@@ -159,25 +159,25 @@ describe('argument validation', () => {
         test('fileName: (none)', () => {
             expect(() => {
                 (<any>parser.parseFile)();
-            }).toThrowError(`Missing argument 'fileName'`);
+            }).toThrow(`Missing argument 'fileName'`);
         });
 
         test('fileName: null', () => {
             expect(() => {
                 (<any>parser.parseFile)(null);
-            }).toThrowError(`Argument 'fileName' must be a non-empty string`);
+            }).toThrow(`Argument 'fileName' must be a non-empty string`);
         });
 
         test('fileName: wrong type', () => {
             expect(() => {
                 (<any>parser.parseFile)(42);
-            }).toThrowError(`Argument 'fileName' must be a non-empty string`);
+            }).toThrow(`Argument 'fileName' must be a non-empty string`);
         });
 
         test('options: wrong type', () => {
             expect(() => {
                 (<any>parser.parseFile)('foo.ts', 'bar');
-            }).toThrowError(`Argument 'options' must be an object`);
+            }).toThrow(`Argument 'options' must be an object`);
         });
 
         test('options.lineNumberStart: wrong type', () => {
@@ -185,7 +185,7 @@ describe('argument validation', () => {
                 (<any>parser.parseFile)('foo.ts', {
                     lineNumberStart: 'bar'
                 });
-            }).toThrowError(`Property 'options.lineNumberStart' must be a number`);
+            }).toThrow(`Property 'options.lineNumberStart' must be a number`);
         });
 
         test('options.transformSource: wrong type', () => {
@@ -193,7 +193,7 @@ describe('argument validation', () => {
                 (<any>parser.parseFile)('foo.ts', {
                     transformSource: 42
                 });
-            }).toThrowError(`Property 'options.transformSource' must be a function`);
+            }).toThrow(`Property 'options.transformSource' must be a function`);
         });
     });
 
@@ -202,31 +202,31 @@ describe('argument validation', () => {
         test('pattern: (none)', () => {
             expect(() => {
                 (<any>parser.parseFilesGlob)();
-            }).toThrowError(`Missing argument 'pattern'`);
+            }).toThrow(`Missing argument 'pattern'`);
         });
 
         test('pattern: null', () => {
             expect(() => {
                 (<any>parser.parseFilesGlob)(null);
-            }).toThrowError(`Argument 'pattern' must be a non-empty string`);
+            }).toThrow(`Argument 'pattern' must be a non-empty string`);
         });
 
         test('pattern: wrong type', () => {
             expect(() => {
                 (<any>parser.parseFilesGlob)(42);
-            }).toThrowError(`Argument 'pattern' must be a non-empty string`);
+            }).toThrow(`Argument 'pattern' must be a non-empty string`);
         });
 
         test('globOptions: wrong type', () => {
             expect(() => {
                 (<any>parser.parseFilesGlob)('*.ts;', 'foo');
-            }).toThrowError(`Argument 'globOptions' must be an object`);
+            }).toThrow(`Argument 'globOptions' must be an object`);
         });
 
         test('options: wrong type', () => {
             expect(() => {
                 (<any>parser.parseFilesGlob)('*.ts;', {}, 'foo');
-            }).toThrowError(`Argument 'options' must be an object`);
+            }).toThrow(`Argument 'options' must be an object`);
         });
 
         test('options.lineNumberStart: wrong type', () => {
@@ -234,7 +234,7 @@ describe('argument validation', () => {
                 (<any>parser.parseFilesGlob)('*.ts;', {}, {
                     lineNumberStart: 'foo'
                 });
-            }).toThrowError(`Property 'options.lineNumberStart' must be a number`);
+            }).toThrow(`Property 'options.lineNumberStart' must be a number`);
         });
 
         test('options.transformSource: wrong type', () => {
@@ -242,7 +242,7 @@ describe('argument validation', () => {
                 (<any>parser.parseFile)('foo.ts', {
                     transformSource: 42
                 });
-            }).toThrowError(`Property 'options.transformSource' must be a function`);
+            }).toThrow(`Property 'options.transformSource' must be a function`);
         });
     });
 
@@ -251,19 +251,19 @@ describe('argument validation', () => {
         test('source: (none)', () => {
             expect(() => {
                 (<any>parser.parseString)();
-            }).toThrowError(`Missing argument 'source'`);
+            }).toThrow(`Missing argument 'source'`);
         });
 
         test('source: null', () => {
             expect(() => {
                 (<any>parser.parseString)(null);
-            }).toThrowError(`Argument 'source' must be a string`);
+            }).toThrow(`Argument 'source' must be a string`);
         });
 
         test('source: wrong type', () => {
             expect(() => {
                 (<any>parser.parseString)(42);
-            }).toThrowError(`Argument 'source' must be a string`);
+            }).toThrow(`Argument 'source' must be a string`);
         });
 
         test('fileName: (none)', () => {
@@ -275,13 +275,13 @@ describe('argument validation', () => {
         test('fileName: wrong type', () => {
             expect(() => {
                 (<any>parser.parseString)('let foo = 42;', 42);
-            }).toThrowError(`Argument 'fileName' must be a non-empty string`);
+            }).toThrow(`Argument 'fileName' must be a non-empty string`);
         });
 
         test('options: wrong type', () => {
             expect(() => {
                 (<any>parser.parseString)('let foo = 42;', 'foo.ts', 'bar');
-            }).toThrowError(`Argument 'options' must be an object`);
+            }).toThrow(`Argument 'options' must be an object`);
         });
 
         test('options.lineNumberStart: wrong type', () => {
@@ -289,7 +289,7 @@ describe('argument validation', () => {
                 (<any>parser.parseString)('let foo = 42;', 'foo.ts', {
                     lineNumberStart: 'bar'
                 });
-            }).toThrowError(`Property 'options.lineNumberStart' must be a number`);
+            }).toThrow(`Property 'options.lineNumberStart' must be a number`);
         });
 
         test('options.transformSource: wrong type', () => {
@@ -297,7 +297,7 @@ describe('argument validation', () => {
                 (<any>parser.parseFile)('foo.ts', {
                     transformSource: 42
                 });
-            }).toThrowError(`Property 'options.transformSource' must be a function`);
+            }).toThrow(`Property 'options.transformSource' must be a function`);
         });
     });
 
@@ -306,19 +306,19 @@ describe('argument validation', () => {
         test('extractor: (none)', () => {
             expect(() => {
                 (<any>parser.addExtractor)();
-            }).toThrowError(`Missing argument 'extractor'`);
+            }).toThrow(`Missing argument 'extractor'`);
         });
 
         test('extractor: null', () => {
             expect(() => {
                 (<any>parser.addExtractor)(null);
-            }).toThrowError(`Invalid extractor function provided. 'null' is not a function`);
+            }).toThrow(`Invalid extractor function provided. 'null' is not a function`);
         });
 
         test('extractor: wrong type', () => {
             expect(() => {
                 (<any>parser.addExtractor)(42);
-            }).toThrowError(`Invalid extractor function provided. '42' is not a function`);
+            }).toThrow(`Invalid extractor function provided. '42' is not a function`);
         });
     });
 });

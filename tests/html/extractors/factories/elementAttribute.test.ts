@@ -173,43 +173,43 @@ describe('HTML: Element Attribute Extractor', () => {
         test('selector: (none)', () => {
             expect(() => {
                 (<any>elementAttributeExtractor)();
-            }).toThrowError(`Missing argument 'selector'`);
+            }).toThrow(`Missing argument 'selector'`);
         });
 
         test('selector: null', () => {
             expect(() => {
                 (<any>elementAttributeExtractor)(null);
-            }).toThrowError(`Argument 'selector' must be a non-empty string`);
+            }).toThrow(`Argument 'selector' must be a non-empty string`);
         });
 
         test('selector: wrong type', () => {
             expect(() => {
                 (<any>elementAttributeExtractor)(42);
-            }).toThrowError(`Argument 'selector' must be a non-empty string`);
+            }).toThrow(`Argument 'selector' must be a non-empty string`);
         });
 
         test('textAttribute: (none)', () => {
             expect(() => {
                 (<any>elementAttributeExtractor)('[translate]');
-            }).toThrowError(`Missing argument 'textAttribute'`);
+            }).toThrow(`Missing argument 'textAttribute'`);
         });
 
         test('textAttribute: null', () => {
             expect(() => {
                 (<any>elementAttributeExtractor)('[translate]', null);
-            }).toThrowError(`Argument 'textAttribute' must be a non-empty string`);
+            }).toThrow(`Argument 'textAttribute' must be a non-empty string`);
         });
 
         test('textAttribute: wrong type', () => {
             expect(() => {
                 (<any>elementAttributeExtractor)('[translate]', 42);
-            }).toThrowError(`Argument 'textAttribute' must be a non-empty string`);
+            }).toThrow(`Argument 'textAttribute' must be a non-empty string`);
         });
 
         test('options: wrong type', () => {
             expect(() => {
                 (<any>elementAttributeExtractor)('[translate]', 'translate', 'foo');
-            }).toThrowError(`Argument 'options' must be an object`);
+            }).toThrow(`Argument 'options' must be an object`);
         });
 
         test('options.attributes: wrong type', () => {
@@ -217,7 +217,7 @@ describe('HTML: Element Attribute Extractor', () => {
                 (<any>elementAttributeExtractor)('[translate]', 'translate', {
                     attributes: 'foo'
                 });
-            }).toThrowError(`Property 'options.attributes' must be an object`);
+            }).toThrow(`Property 'options.attributes' must be an object`);
         });
 
         test('options.attributes.textPlural: wrong type', () => {
@@ -227,7 +227,7 @@ describe('HTML: Element Attribute Extractor', () => {
                         textPlural: 42
                     }
                 });
-            }).toThrowError(`Property 'options.attributes.textPlural' must be a string`);
+            }).toThrow(`Property 'options.attributes.textPlural' must be a string`);
         });
 
         test('options.attributes.context: wrong type', () => {
@@ -237,7 +237,7 @@ describe('HTML: Element Attribute Extractor', () => {
                         context: 42
                     }
                 });
-            }).toThrowError(`Property 'options.attributes.context' must be a string`);
+            }).toThrow(`Property 'options.attributes.context' must be a string`);
         });
 
         test('options.attributes.comment: wrong type', () => {
@@ -247,7 +247,7 @@ describe('HTML: Element Attribute Extractor', () => {
                         comment: 42
                     }
                 });
-            }).toThrowError(`Property 'options.attributes.comment' must be a string`);
+            }).toThrow(`Property 'options.attributes.comment' must be a string`);
         });
 
         test('options.content: wrong type', () => {
@@ -255,7 +255,7 @@ describe('HTML: Element Attribute Extractor', () => {
                 (<any>elementContentExtractor)('[translate]', {
                     content: 'foo'
                 });
-            }).toThrowError(`Property 'options.content' must be an object`);
+            }).toThrow(`Property 'options.content' must be an object`);
         });
 
         test('options.content.trimWhiteSpace: wrong type', () => {
@@ -265,7 +265,7 @@ describe('HTML: Element Attribute Extractor', () => {
                         trimWhiteSpace: 'foo'
                     }
                 });
-            }).toThrowError(`Property 'options.content.trimWhiteSpace' must be a boolean`);
+            }).toThrow(`Property 'options.content.trimWhiteSpace' must be a boolean`);
         });
 
         test('options.content.preserveIndentation: wrong type', () => {
@@ -275,7 +275,7 @@ describe('HTML: Element Attribute Extractor', () => {
                         preserveIndentation: 'foo'
                     }
                 });
-            }).toThrowError(`Property 'options.content.preserveIndentation' must be a boolean`);
+            }).toThrow(`Property 'options.content.preserveIndentation' must be a boolean`);
         });
 
         test('options.content.replaceNewLines: wrong type', () => {
@@ -285,7 +285,7 @@ describe('HTML: Element Attribute Extractor', () => {
                         replaceNewLines: 42
                     }
                 });
-            }).toThrowError(`Property 'options.content.replaceNewLines' must be false or a string`);
+            }).toThrow(`Property 'options.content.replaceNewLines' must be false or a string`);
         });
 
         test('options.content.replaceNewLines: true', () => {
@@ -295,7 +295,7 @@ describe('HTML: Element Attribute Extractor', () => {
                         replaceNewLines: true
                     }
                 });
-            }).toThrowError(`Property 'options.content.replaceNewLines' must be false or a string`);
+            }).toThrow(`Property 'options.content.replaceNewLines' must be false or a string`);
         });
     });
 

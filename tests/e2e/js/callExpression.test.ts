@@ -444,49 +444,49 @@ describe('argument validation', () => {
     test('calleeName: (none)', () => {
         expect(() => {
             (<any>JsExtractors.callExpression)();
-        }).toThrowError(`Missing argument 'calleeName'`);
+        }).toThrow(`Missing argument 'calleeName'`);
     });
 
     test('calleeName: null', () => {
         expect(() => {
             (<any>JsExtractors.callExpression)(null);
-        }).toThrowError(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
+        }).toThrow(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
     });
 
     test('calleeName: wrong type', () => {
         expect(() => {
             (<any>JsExtractors.callExpression)(42);
-        }).toThrowError(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
+        }).toThrow(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
     });
 
     test('calleeName: [string, wrong type]', () => {
         expect(() => {
             (<any>JsExtractors.callExpression)(['service', 42]);
-        }).toThrowError(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
+        }).toThrow(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
     });
 
     test('options: (none)', () => {
         expect(() => {
             (<any>JsExtractors.callExpression)('service.getText');
-        }).toThrowError(`Missing argument 'options'`);
+        }).toThrow(`Missing argument 'options'`);
     });
 
     test('options: null', () => {
         expect(() => {
             (<any>JsExtractors.callExpression)('service.getText', null);
-        }).toThrowError(`Argument 'options' must be an object`);
+        }).toThrow(`Argument 'options' must be an object`);
     });
 
     test('options: wrong type', () => {
         expect(() => {
             (<any>JsExtractors.callExpression)('service.getText', 42);
-        }).toThrowError(`Argument 'options' must be an object`);
+        }).toThrow(`Argument 'options' must be an object`);
     });
 
     test('options.arguments: (none)', () => {
         expect(() => {
             (<any>JsExtractors.callExpression)('service.getText', {});
-        }).toThrowError(`Property 'options.arguments' must be an object`);
+        }).toThrow(`Property 'options.arguments' must be an object`);
     });
 
     test('options.arguments: null', () => {
@@ -494,7 +494,7 @@ describe('argument validation', () => {
             (<any>JsExtractors.callExpression)('service.getText', {
                 arguments: null
             });
-        }).toThrowError(`Property 'options.arguments' must be an object`);
+        }).toThrow(`Property 'options.arguments' must be an object`);
     });
 
     test('options.arguments: wrong type', () => {
@@ -502,7 +502,7 @@ describe('argument validation', () => {
             (<any>JsExtractors.callExpression)('service.getText', {
                 arguments: 42
             });
-        }).toThrowError(`Property 'options.arguments' must be an object`);
+        }).toThrow(`Property 'options.arguments' must be an object`);
     });
 
     test('options.arguments.text: (none)', () => {
@@ -510,7 +510,7 @@ describe('argument validation', () => {
             (<any>JsExtractors.callExpression)('service.getText', {
                 arguments: {}
             });
-        }).toThrowError(`Property 'options.arguments.text' is missing`);
+        }).toThrow(`Property 'options.arguments.text' is missing`);
     });
 
     test('options.arguments.text: null', () => {
@@ -520,7 +520,7 @@ describe('argument validation', () => {
                     text: null
                 }
             });
-        }).toThrowError(`Property 'options.arguments.text' must be a number`);
+        }).toThrow(`Property 'options.arguments.text' must be a number`);
     });
 
     test('options.arguments.text: wrong type', () => {
@@ -530,7 +530,7 @@ describe('argument validation', () => {
                     text: 'Foo'
                 }
             });
-        }).toThrowError(`Property 'options.arguments.text' must be a number`);
+        }).toThrow(`Property 'options.arguments.text' must be a number`);
     });
 
     test('options.arguments.textPlural: null', () => {
@@ -541,7 +541,7 @@ describe('argument validation', () => {
                     textPlural: null
                 }
             });
-        }).toThrowError(`Property 'options.arguments.textPlural' must be a number`);
+        }).toThrow(`Property 'options.arguments.textPlural' must be a number`);
     });
 
     test('options.arguments.textPlural: wrong type', () => {
@@ -552,7 +552,7 @@ describe('argument validation', () => {
                     textPlural: 'Foo'
                 }
             });
-        }).toThrowError(`Property 'options.arguments.textPlural' must be a number`);
+        }).toThrow(`Property 'options.arguments.textPlural' must be a number`);
     });
 
     test('options.arguments.context: null', () => {
@@ -563,7 +563,7 @@ describe('argument validation', () => {
                     context: null
                 }
             });
-        }).toThrowError(`Property 'options.arguments.context' must be a number`);
+        }).toThrow(`Property 'options.arguments.context' must be a number`);
     });
 
     test('options.arguments.context: wrong type', () => {
@@ -574,7 +574,7 @@ describe('argument validation', () => {
                     context: 'Foo'
                 }
             });
-        }).toThrowError(`Property 'options.arguments.context' must be a number`);
+        }).toThrow(`Property 'options.arguments.context' must be a number`);
     });
 
     test('options.comments.regex: null', () => {
@@ -587,7 +587,7 @@ describe('argument validation', () => {
                     regex: null
                 }
             });
-        }).toThrowError(`Property 'options.comments.regex' must be a regular expression`);
+        }).toThrow(`Property 'options.comments.regex' must be a regular expression`);
     });
 
     test('options.comments.regex: wrong type', () => {
@@ -600,7 +600,7 @@ describe('argument validation', () => {
                     regex: 'Foo'
                 }
             });
-        }).toThrowError(`Property 'options.comments.regex' must be a regular expression`);
+        }).toThrow(`Property 'options.comments.regex' must be a regular expression`);
     });
 
     test('options.comments.otherLineLeading: null', () => {
@@ -613,7 +613,7 @@ describe('argument validation', () => {
                     otherLineLeading: null
                 }
             });
-        }).toThrowError(`Property 'options.comments.otherLineLeading' must be a boolean`);
+        }).toThrow(`Property 'options.comments.otherLineLeading' must be a boolean`);
     });
 
     test('options.comments.otherLineLeading: wrong type', () => {
@@ -626,7 +626,7 @@ describe('argument validation', () => {
                     otherLineLeading: 'Foo'
                 }
             });
-        }).toThrowError(`Property 'options.comments.otherLineLeading' must be a boolean`);
+        }).toThrow(`Property 'options.comments.otherLineLeading' must be a boolean`);
     });
 
     test('options.comments.sameLineLeading: null', () => {
@@ -639,7 +639,7 @@ describe('argument validation', () => {
                     sameLineLeading: null
                 }
             });
-        }).toThrowError(`Property 'options.comments.sameLineLeading' must be a boolean`);
+        }).toThrow(`Property 'options.comments.sameLineLeading' must be a boolean`);
     });
 
     test('options.comments.sameLineLeading: wrong type', () => {
@@ -652,7 +652,7 @@ describe('argument validation', () => {
                     sameLineLeading: 'Foo'
                 }
             });
-        }).toThrowError(`Property 'options.comments.sameLineLeading' must be a boolean`);
+        }).toThrow(`Property 'options.comments.sameLineLeading' must be a boolean`);
     });
 
     test('options.comments.sameLineTrailing: null', () => {
@@ -665,7 +665,7 @@ describe('argument validation', () => {
                     sameLineTrailing: null
                 }
             });
-        }).toThrowError(`Property 'options.comments.sameLineTrailing' must be a boolean`);
+        }).toThrow(`Property 'options.comments.sameLineTrailing' must be a boolean`);
     });
 
     test('options.comments.sameLineTrailing: wrong type', () => {
@@ -678,7 +678,7 @@ describe('argument validation', () => {
                     sameLineTrailing: 'Foo'
                 }
             });
-        }).toThrowError(`Property 'options.comments.sameLineTrailing' must be a boolean`);
+        }).toThrow(`Property 'options.comments.sameLineTrailing' must be a boolean`);
     });
 
     test('options.content: wrong type', () => {
@@ -689,7 +689,7 @@ describe('argument validation', () => {
                 },
                 content: 'foo'
             });
-        }).toThrowError(`Property 'options.content' must be an object`);
+        }).toThrow(`Property 'options.content' must be an object`);
     });
 
     test('options.content.trimWhiteSpace: wrong type', () => {
@@ -702,7 +702,7 @@ describe('argument validation', () => {
                     trimWhiteSpace: 'foo'
                 }
             });
-        }).toThrowError(`Property 'options.content.trimWhiteSpace' must be a boolean`);
+        }).toThrow(`Property 'options.content.trimWhiteSpace' must be a boolean`);
     });
 
     test('options.content.preserveIndentation: wrong type', () => {
@@ -715,7 +715,7 @@ describe('argument validation', () => {
                     preserveIndentation: 'foo'
                 }
             });
-        }).toThrowError(`Property 'options.content.preserveIndentation' must be a boolean`);
+        }).toThrow(`Property 'options.content.preserveIndentation' must be a boolean`);
     });
 
     test('options.content.replaceNewLines: wrong type', () => {
@@ -728,7 +728,7 @@ describe('argument validation', () => {
                     replaceNewLines: 42
                 }
             });
-        }).toThrowError(`Property 'options.content.replaceNewLines' must be false or a string`);
+        }).toThrow(`Property 'options.content.replaceNewLines' must be false or a string`);
     });
 
     test('options.content.replaceNewLines: true', () => {
@@ -741,7 +741,7 @@ describe('argument validation', () => {
                     replaceNewLines: true
                 }
             });
-        }).toThrowError(`Property 'options.content.replaceNewLines' must be false or a string`);
+        }).toThrow(`Property 'options.content.replaceNewLines' must be false or a string`);
     });
 });
 

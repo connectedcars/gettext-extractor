@@ -48,25 +48,25 @@ describe('argument validation', () => {
         test('message: (none)', () => {
             expect(() => {
                 (<any>extractor.addMessage)();
-            }).toThrowError(`Missing argument 'message'`);
+            }).toThrow(`Missing argument 'message'`);
         });
 
         test('message: null', () => {
             expect(() => {
                 (<any>extractor.addMessage)(null);
-            }).toThrowError(`Argument 'message' must be an object`);
+            }).toThrow(`Argument 'message' must be an object`);
         });
 
         test('message: wrong type', () => {
             expect(() => {
                 (<any>extractor.addMessage)(42);
-            }).toThrowError(`Argument 'message' must be an object`);
+            }).toThrow(`Argument 'message' must be an object`);
         });
 
         test('message.text: (none)', () => {
             expect(() => {
                 (<any>extractor.addMessage)({});
-            }).toThrowError(`Property 'message.text' is missing`);
+            }).toThrow(`Property 'message.text' is missing`);
         });
 
         test('message.text: null', () => {
@@ -74,7 +74,7 @@ describe('argument validation', () => {
                 (<any>extractor.addMessage)({
                     text: null
                 });
-            }).toThrowError(`Property 'message.text' must be a string`);
+            }).toThrow(`Property 'message.text' must be a string`);
         });
 
         test('message.text: wrong type', () => {
@@ -82,7 +82,7 @@ describe('argument validation', () => {
                 (<any>extractor.addMessage)({
                     text: 42
                 });
-            }).toThrowError(`Property 'message.text' must be a string`);
+            }).toThrow(`Property 'message.text' must be a string`);
         });
 
         test('message: only required', () => {
@@ -99,7 +99,7 @@ describe('argument validation', () => {
                     text: 'Foo',
                     textPlural: null
                 });
-            }).toThrowError(`Property 'message.textPlural' must be a string`);
+            }).toThrow(`Property 'message.textPlural' must be a string`);
         });
 
         test('message.textPlural: wrong type', () => {
@@ -108,7 +108,7 @@ describe('argument validation', () => {
                     text: 'Foo',
                     textPlural: 42
                 });
-            }).toThrowError(`Property 'message.textPlural' must be a string`);
+            }).toThrow(`Property 'message.textPlural' must be a string`);
         });
 
         test('message.context: null', () => {
@@ -117,7 +117,7 @@ describe('argument validation', () => {
                     text: 'Foo',
                     context: null
                 });
-            }).toThrowError(`Property 'message.context' must be a string`);
+            }).toThrow(`Property 'message.context' must be a string`);
         });
 
         test('message.context: wrong type', () => {
@@ -126,7 +126,7 @@ describe('argument validation', () => {
                     text: 'Foo',
                     context: 42
                 });
-            }).toThrowError(`Property 'message.context' must be a string`);
+            }).toThrow(`Property 'message.context' must be a string`);
         });
 
         test('message.references: null', () => {
@@ -135,7 +135,7 @@ describe('argument validation', () => {
                     text: 'Foo',
                     references: null
                 });
-            }).toThrowError(`Property 'message.references' must be an array`);
+            }).toThrow(`Property 'message.references' must be an array`);
         });
 
         test('message.references: wrong type', () => {
@@ -144,7 +144,7 @@ describe('argument validation', () => {
                     text: 'Foo',
                     references: 42
                 });
-            }).toThrowError(`Property 'message.references' must be an array`);
+            }).toThrow(`Property 'message.references' must be an array`);
         });
 
         test('message.comments: null', () => {
@@ -153,7 +153,7 @@ describe('argument validation', () => {
                     text: 'Foo',
                     comments: null
                 });
-            }).toThrowError(`Property 'message.comments' must be an array`);
+            }).toThrow(`Property 'message.comments' must be an array`);
         });
 
         test('message.comments: wrong type', () => {
@@ -162,7 +162,7 @@ describe('argument validation', () => {
                     text: 'Foo',
                     comments: 42
                 });
-            }).toThrowError(`Property 'message.comments' must be an array`);
+            }).toThrow(`Property 'message.comments' must be an array`);
         });
     });
 
@@ -171,7 +171,7 @@ describe('argument validation', () => {
         test('headers: wrong type', () => {
             expect(() => {
                 (<any>extractor.getPotString)('foo');
-            }).toThrowError(`Argument 'headers' must be an object`);
+            }).toThrow(`Argument 'headers' must be an object`);
         });
     });
 
@@ -180,25 +180,25 @@ describe('argument validation', () => {
         test('fileName: (none)', () => {
             expect(() => {
                 (<any>extractor.savePotFile)();
-            }).toThrowError(`Missing argument 'fileName'`);
+            }).toThrow(`Missing argument 'fileName'`);
         });
 
         test('fileName: null', () => {
             expect(() => {
                 (<any>extractor.savePotFile)(null);
-            }).toThrowError(`Argument 'fileName' must be a non-empty string`);
+            }).toThrow(`Argument 'fileName' must be a non-empty string`);
         });
 
         test('fileName: wrong type', () => {
             expect(() => {
                 (<any>extractor.savePotFile)(42);
-            }).toThrowError(`Argument 'fileName' must be a non-empty string`);
+            }).toThrow(`Argument 'fileName' must be a non-empty string`);
         });
 
         test('headers: wrong type', () => {
             expect(() => {
                 (<any>extractor.savePotFile)('foo.ts', 'foo');
-            }).toThrowError(`Argument 'headers' must be an object`);
+            }).toThrow(`Argument 'headers' must be an object`);
         });
     });
 
@@ -207,25 +207,25 @@ describe('argument validation', () => {
         test('fileName: (none)', () => {
             expect(() => {
                 (<any>extractor.savePotFileAsync)();
-            }).toThrowError(`Missing argument 'fileName'`);
+            }).toThrow(`Missing argument 'fileName'`);
         });
 
         test('fileName: null', () => {
             expect(() => {
                 (<any>extractor.savePotFileAsync)(null);
-            }).toThrowError(`Argument 'fileName' must be a non-empty string`);
+            }).toThrow(`Argument 'fileName' must be a non-empty string`);
         });
 
         test('fileName: wrong type', () => {
             expect(() => {
                 (<any>extractor.savePotFileAsync)(42);
-            }).toThrowError(`Argument 'fileName' must be a non-empty string`);
+            }).toThrow(`Argument 'fileName' must be a non-empty string`);
         });
 
         test('headers: wrong type', () => {
             expect(() => {
                 (<any>extractor.savePotFileAsync)('foo.ts', 'foo');
-            }).toThrowError(`Argument 'headers' must be an object`);
+            }).toThrow(`Argument 'headers' must be an object`);
         });
     });
 
@@ -240,19 +240,19 @@ describe('argument validation', () => {
         test('extractors: null', () => {
             expect(() => {
                 (<any>extractor.createJsParser)(null);
-            }).toThrowError(`Argument 'extractors' must be a non-empty array`);
+            }).toThrow(`Argument 'extractors' must be a non-empty array`);
         });
 
         test('extractors: wrong type', () => {
             expect(() => {
                 (<any>extractor.createJsParser)(42);
-            }).toThrowError(`Argument 'extractors' must be a non-empty array`);
+            }).toThrow(`Argument 'extractors' must be a non-empty array`);
         });
 
         test('extractors: []', () => {
             expect(() => {
                 (<any>extractor.createJsParser)([]);
-            }).toThrowError(`Argument 'extractors' must be a non-empty array`);
+            }).toThrow(`Argument 'extractors' must be a non-empty array`);
         });
 
         test('extractors: [(none)]', () => {
@@ -260,7 +260,7 @@ describe('argument validation', () => {
                 (<any>extractor.createJsParser)([
                     undefined
                 ]);
-            }).toThrowError(`Invalid extractor function provided. 'undefined' is not a function`);
+            }).toThrow(`Invalid extractor function provided. 'undefined' is not a function`);
         });
 
         test('extractors: [null]', () => {
@@ -268,7 +268,7 @@ describe('argument validation', () => {
                 (<any>extractor.createJsParser)([
                     null
                 ]);
-            }).toThrowError(`Invalid extractor function provided. 'null' is not a function`);
+            }).toThrow(`Invalid extractor function provided. 'null' is not a function`);
         });
 
         test('extractors: [wrong type]', () => {
@@ -276,7 +276,7 @@ describe('argument validation', () => {
                 (<any>extractor.createJsParser)([
                     42
                 ]);
-            }).toThrowError(`Invalid extractor function provided. '42' is not a function`);
+            }).toThrow(`Invalid extractor function provided. '42' is not a function`);
         });
 
         test('extractors: [function, wrong type]', () => {
@@ -285,7 +285,7 @@ describe('argument validation', () => {
                     () => {},
                     42
                 ]);
-            }).toThrowError(`Invalid extractor function provided. '42' is not a function`);
+            }).toThrow(`Invalid extractor function provided. '42' is not a function`);
         });
     });
 });

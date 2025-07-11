@@ -531,13 +531,13 @@ describe('Element Selector', () => {
                 test('multi-level', () => {
                     expect(() => {
                         new ElementSelectorSet('foo bar');
-                    }).toThrowError(`Selector string 'foo bar' is invalid. Multi-level rules are not supported.`);
+                    }).toThrow(`Selector string 'foo bar' is invalid. Multi-level rules are not supported.`);
                 });
 
                 test('syntax error', () => {
                     expect(() => {
                         new ElementSelectorSet('foo,,bar');
-                    }).toThrowError(`Error parsing selector string`);
+                    }).toThrow(`Error parsing selector string`);
                 });
             });
         });

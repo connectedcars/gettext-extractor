@@ -447,7 +447,7 @@ test('incompatible plurals', () => {
             comments: [],
             references: []
         });
-    }).toThrowError(`Incompatible plurals found for 'Foo' ('Foos' and 'Bars')`);
+    }).toThrow(`Incompatible plurals found for 'Foo' ('Foos' and 'Bars')`);
 });
 
 test('duplicate references', () => {

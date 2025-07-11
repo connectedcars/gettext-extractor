@@ -12,7 +12,7 @@ For the full documentation check out the [Github Wiki][wiki].
 
 ## Installation
 
-> **Note:** This package requires Node.js version 6 or higher.
+> **Note:** This package requires Node.js version 20 or higher.
 
 #### Yarn
 
