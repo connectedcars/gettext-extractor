@@ -14,12 +14,6 @@ For the full documentation check out the [Github Wiki][wiki].
 
 > **Note:** This package requires Node.js version 20 or higher.
 
-#### Yarn
-
-```text
-yarn add gettext-extractor
-```
-
 #### NPM
 
 ```text

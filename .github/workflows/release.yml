@@ -32,12 +32,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: lts/*
-          cache: yarn
+          cache: npm
           registry-url: https://registry.npmjs.org
       - name: Install dependencies
-        run: yarn install
+        run: npm install
       - name: Build
-        run: yarn build
+        run: npm run build
       - name: Publish
         run: npm publish
         env:
