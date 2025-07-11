@@ -57,25 +57,25 @@ describe('HTML: Embedded JS Extractor', () => {
         test('selector: (none)', () => {
             expect(() => {
                 (<any>embeddedJsExtractor)();
-            }).toThrowError(`Missing argument 'selector'`);
+            }).toThrow(`Missing argument 'selector'`);
         });
 
         test('selector: null', () => {
             expect(() => {
                 (<any>embeddedJsExtractor)(null);
-            }).toThrowError(`Argument 'selector' must be a non-empty string`);
+            }).toThrow(`Argument 'selector' must be a non-empty string`);
         });
 
         test('selector: wrong type', () => {
             expect(() => {
                 (<any>embeddedJsExtractor)(42);
-            }).toThrowError(`Argument 'selector' must be a non-empty string`);
+            }).toThrow(`Argument 'selector' must be a non-empty string`);
         });
 
         test('jsParser: (none)', () => {
             expect(() => {
                 (<any>embeddedJsExtractor)('script');
-            }).toThrowError(`Missing argument 'jsParser'`);
+            }).toThrow(`Missing argument 'jsParser'`);
         });
     });
 });

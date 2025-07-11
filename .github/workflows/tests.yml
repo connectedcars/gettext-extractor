@@ -31,9 +31,9 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '18'
           - '20'
           - '22'
+          - '24'
     steps:
       - name: Checkout
         uses: actions/checkout@v4

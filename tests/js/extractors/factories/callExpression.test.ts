@@ -452,49 +452,49 @@ describe('JS: Call Expression Extractor', () => {
         test('calleeName: (none)', () => {
             expect(() => {
                 (<any>callExpressionExtractor)();
-            }).toThrowError(`Missing argument 'calleeName'`);
+            }).toThrow(`Missing argument 'calleeName'`);
         });
 
         test('calleeName: null', () => {
             expect(() => {
                 (<any>callExpressionExtractor)(null);
-            }).toThrowError(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
+            }).toThrow(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
         });
 
         test('calleeName: wrong type', () => {
             expect(() => {
                 (<any>callExpressionExtractor)(42);
-            }).toThrowError(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
+            }).toThrow(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
         });
 
         test('calleeName: [string, wrong type]', () => {
             expect(() => {
                 (<any>callExpressionExtractor)(['service', 42]);
-            }).toThrowError(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
+            }).toThrow(`Argument 'calleeName' must be a non-empty string or an array containing non-empty strings`);
         });
 
         test('options: (none)', () => {
             expect(() => {
                 (<any>callExpressionExtractor)('service.getText');
-            }).toThrowError(`Missing argument 'options'`);
+            }).toThrow(`Missing argument 'options'`);
         });
 
         test('options: null', () => {
             expect(() => {
                 (<any>callExpressionExtractor)('service.getText', null);
-            }).toThrowError(`Argument 'options' must be an object`);
+            }).toThrow(`Argument 'options' must be an object`);
         });
 
         test('options: wrong type', () => {
             expect(() => {
                 (<any>callExpressionExtractor)('service.getText', 42);
-            }).toThrowError(`Argument 'options' must be an object`);
+            }).toThrow(`Argument 'options' must be an object`);
         });
 
         test('options.arguments: (none)', () => {
             expect(() => {
                 (<any>callExpressionExtractor)('service.getText', {});
-            }).toThrowError(`Property 'options.arguments' must be an object`);
+            }).toThrow(`Property 'options.arguments' must be an object`);
         });
 
         test('options.arguments: null', () => {
@@ -502,7 +502,7 @@ describe('JS: Call Expression Extractor', () => {
                 (<any>callExpressionExtractor)('service.getText', {
                     arguments: null
                 });
-            }).toThrowError(`Property 'options.arguments' must be an object`);
+            }).toThrow(`Property 'options.arguments' must be an object`);
         });
 
         test('options.arguments: wrong type', () => {
@@ -510,7 +510,7 @@ describe('JS: Call Expression Extractor', () => {
                 (<any>callExpressionExtractor)('service.getText', {
                     arguments: 42
                 });
-            }).toThrowError(`Property 'options.arguments' must be an object`);
+            }).toThrow(`Property 'options.arguments' must be an object`);
         });
 
         test('options.arguments.text: (none)', () => {
@@ -518,7 +518,7 @@ describe('JS: Call Expression Extractor', () => {
                 (<any>callExpressionExtractor)('service.getText', {
                     arguments: {}
                 });
-            }).toThrowError(`Property 'options.arguments.text' is missing`);
+            }).toThrow(`Property 'options.arguments.text' is missing`);
         });
 
         test('options.arguments.text: null', () => {
@@ -528,7 +528,7 @@ describe('JS: Call Expression Extractor', () => {
                         text: null
                     }
                 });
-            }).toThrowError(`Property 'options.arguments.text' must be a number`);
+            }).toThrow(`Property 'options.arguments.text' must be a number`);
         });
 
         test('options.arguments.text: wrong type', () => {
@@ -538,7 +538,7 @@ describe('JS: Call Expression Extractor', () => {
                         text: 'Foo'
                     }
                 });
-            }).toThrowError(`Property 'options.arguments.text' must be a number`);
+            }).toThrow(`Property 'options.arguments.text' must be a number`);
         });
 
         test('options.arguments.textPlural: null', () => {
@@ -549,7 +549,7 @@ describe('JS: Call Expression Extractor', () => {
                         textPlural: null
                     }
                 });
-            }).toThrowError(`Property 'options.arguments.textPlural' must be a number`);
+            }).toThrow(`Property 'options.arguments.textPlural' must be a number`);
         });
 
         test('options.arguments.textPlural: wrong type', () => {
@@ -560,7 +560,7 @@ describe('JS: Call Expression Extractor', () => {
                         textPlural: 'Foo'
                     }
                 });
-            }).toThrowError(`Property 'options.arguments.textPlural' must be a number`);
+            }).toThrow(`Property 'options.arguments.textPlural' must be a number`);
         });
 
         test('options.arguments.context: null', () => {
@@ -571,7 +571,7 @@ describe('JS: Call Expression Extractor', () => {
                         context: null
                     }
                 });
-            }).toThrowError(`Property 'options.arguments.context' must be a number`);
+            }).toThrow(`Property 'options.arguments.context' must be a number`);
         });
 
         test('options.arguments.context: wrong type', () => {
@@ -582,7 +582,7 @@ describe('JS: Call Expression Extractor', () => {
                         context: 'Foo'
                     }
                 });
-            }).toThrowError(`Property 'options.arguments.context' must be a number`);
+            }).toThrow(`Property 'options.arguments.context' must be a number`);
         });
 
         test('options.comments.regex: null', () => {
@@ -595,7 +595,7 @@ describe('JS: Call Expression Extractor', () => {
                         regex: null
                     }
                 });
-            }).toThrowError(`Property 'options.comments.regex' must be a regular expression`);
+            }).toThrow(`Property 'options.comments.regex' must be a regular expression`);
         });
 
         test('options.comments.regex: wrong type', () => {
@@ -608,7 +608,7 @@ describe('JS: Call Expression Extractor', () => {
                         regex: 'Foo'
                     }
                 });
-            }).toThrowError(`Property 'options.comments.regex' must be a regular expression`);
+            }).toThrow(`Property 'options.comments.regex' must be a regular expression`);
         });
 
         test('options.comments.otherLineLeading: null', () => {
@@ -621,7 +621,7 @@ describe('JS: Call Expression Extractor', () => {
                         otherLineLeading: null
                     }
                 });
-            }).toThrowError(`Property 'options.comments.otherLineLeading' must be a boolean`);
+            }).toThrow(`Property 'options.comments.otherLineLeading' must be a boolean`);
         });
 
         test('options.comments.otherLineLeading: wrong type', () => {
@@ -634,7 +634,7 @@ describe('JS: Call Expression Extractor', () => {
                         otherLineLeading: 'Foo'
                     }
                 });
-            }).toThrowError(`Property 'options.comments.otherLineLeading' must be a boolean`);
+            }).toThrow(`Property 'options.comments.otherLineLeading' must be a boolean`);
         });
 
         test('options.comments.sameLineLeading: null', () => {
@@ -647,7 +647,7 @@ describe('JS: Call Expression Extractor', () => {
                         sameLineLeading: null
                     }
                 });
-            }).toThrowError(`Property 'options.comments.sameLineLeading' must be a boolean`);
+            }).toThrow(`Property 'options.comments.sameLineLeading' must be a boolean`);
         });
 
         test('options.comments.sameLineLeading: wrong type', () => {
@@ -660,7 +660,7 @@ describe('JS: Call Expression Extractor', () => {
                         sameLineLeading: 'Foo'
                     }
                 });
-            }).toThrowError(`Property 'options.comments.sameLineLeading' must be a boolean`);
+            }).toThrow(`Property 'options.comments.sameLineLeading' must be a boolean`);
         });
 
         test('options.comments.sameLineTrailing: null', () => {
@@ -673,7 +673,7 @@ describe('JS: Call Expression Extractor', () => {
                         sameLineTrailing: null
                     }
                 });
-            }).toThrowError(`Property 'options.comments.sameLineTrailing' must be a boolean`);
+            }).toThrow(`Property 'options.comments.sameLineTrailing' must be a boolean`);
         });
 
         test('options.comments.sameLineTrailing: wrong type', () => {
@@ -686,7 +686,7 @@ describe('JS: Call Expression Extractor', () => {
                         sameLineTrailing: 'Foo'
                     }
                 });
-            }).toThrowError(`Property 'options.comments.sameLineTrailing' must be a boolean`);
+            }).toThrow(`Property 'options.comments.sameLineTrailing' must be a boolean`);
         });
 
         test('options.content: wrong type', () => {
@@ -697,7 +697,7 @@ describe('JS: Call Expression Extractor', () => {
                     },
                     content: 'foo'
                 });
-            }).toThrowError(`Property 'options.content' must be an object`);
+            }).toThrow(`Property 'options.content' must be an object`);
         });
 
         test('options.content.trimWhiteSpace: wrong type', () => {
@@ -710,7 +710,7 @@ describe('JS: Call Expression Extractor', () => {
                         trimWhiteSpace: 'foo'
                     }
                 });
-            }).toThrowError(`Property 'options.content.trimWhiteSpace' must be a boolean`);
+            }).toThrow(`Property 'options.content.trimWhiteSpace' must be a boolean`);
         });
 
         test('options.content.preserveIndentation: wrong type', () => {
@@ -723,7 +723,7 @@ describe('JS: Call Expression Extractor', () => {
                         preserveIndentation: 'foo'
                     }
                 });
-            }).toThrowError(`Property 'options.content.preserveIndentation' must be a boolean`);
+            }).toThrow(`Property 'options.content.preserveIndentation' must be a boolean`);
         });
 
         test('options.content.replaceNewLines: wrong type', () => {
@@ -736,7 +736,7 @@ describe('JS: Call Expression Extractor', () => {
                         replaceNewLines: 42
                     }
                 });
-            }).toThrowError(`Property 'options.content.replaceNewLines' must be false or a string`);
+            }).toThrow(`Property 'options.content.replaceNewLines' must be false or a string`);
         });
 
         test('options.content.replaceNewLines: true', () => {
@@ -749,7 +749,7 @@ describe('JS: Call Expression Extractor', () => {
                         replaceNewLines: true
                     }
                 });
-            }).toThrowError(`Property 'options.content.replaceNewLines' must be false or a string`);
+            }).toThrow(`Property 'options.content.replaceNewLines' must be false or a string`);
         });
     });
 });

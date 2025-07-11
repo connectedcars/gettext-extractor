@@ -52,12 +52,12 @@ describe('HTML: Attribute Value as Embedded JS Extractor', () => {
         test('filter: (none)', () => {
             expect(() => {
                 (<any>embeddedAttributeJsExtractor)();
-            }).toThrowError(`Missing argument 'filter'`);
+            }).toThrow(`Missing argument 'filter'`);
         });
         test('jsParser: (none)', () => {
             expect(() => {
                 (<any>embeddedAttributeJsExtractor)(/:title/);
-            }).toThrowError(`Missing argument 'jsParser'`);
+            }).toThrow(`Missing argument 'jsParser'`);
         });
     });
 });
