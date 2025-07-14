@@ -1,6 +1,6 @@
 {
     "name": "gettext-extractor",
-    "version": "4.0.0",
+    "version": "4.0.1",
     "description": "Gettext extractor for JavaScript, TypeScript, JSX and HTML",
     "author": "Connected Cars <hello@connectedcars.io>",
     "repository": "connectedcars/gettext-extractor",
