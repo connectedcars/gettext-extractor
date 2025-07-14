@@ -10,18 +10,18 @@ Thank you for considering to contribute to this project. These guidelines will h
 
 ##### Prerequisites
 
-- [Yarn]
 - [NodeJS]
+- [npm]
 
 ##### Steps
 
 1. Clone the (forked) repository
-1. Run `yarn install` in the project directory
+1. Run `npm install` in the project directory
 
 #### Building
 
 ```text
-yarn build
+npm run build
 ```
 
 This will run the TypeScript compiler and write the JavaScript output to `dist`.
@@ -29,7 +29,7 @@ This will run the TypeScript compiler and write the JavaScript output to `dist`.
 #### Linting
 
 ```text
-yarn lint
+npm run lint
 ```
 
 This will run [tslint] to check for code style errors.
@@ -37,12 +37,12 @@ This will run [tslint] to check for code style errors.
 #### Running Tests
 
 ```text
-yarn test
+npm test
 ```
 
-This will run automated tests with [jest]. There are also some end-to-end tests which can be run with `yarn test:e2e`.
+This will run automated tests with [jest]. There are also some end-to-end tests which can be run with `npm run test:e2e`.
 
-> **Note:** The E2E tests expect a built version of the package to be present in `dist/` so it's best to run `yarn build` first.
+> **Note:** The E2E tests expect a built version of the package to be present in `dist/` so it's best to run `npm run build` first.
 
 <br/>
 
@@ -58,14 +58,14 @@ The summary of a commit should be concise and worded in an imperative mood.
 
 #### Code Style
 
-It is required that you follow the existing code style. Use `yarn lint` to check. 
+It is required that you follow the existing code style. Use `npm run lint` to check. 
 
 #### Tests
 
 If it makes sense, writing tests for your PRs is always appreciated and will help get them merged.
 
-[Yarn]: https://yarnpkg.com
 [NodeJS]: https://nodejs.org
+[npm]: https://www.npmjs.com/
 [tslint]: https://palantir.github.io/tslint/
 [jest]: https://facebook.github.io/jest/
 [git-commit-message]: https://chris.beams.io/posts/git-commit/
