@@ -3,7 +3,7 @@
     "version": "4.0.0",
     "description": "Gettext extractor for JavaScript, TypeScript, JSX and HTML",
     "author": "Connected Cars <hello@connectedcars.io>",
-    "repository": "connnectedcars/gettext-extractor",
+    "repository": "connectedcars/gettext-extractor",
     "bugs": "https://github.com/connectedcars/gettext-extractor/issues",
     "license": "MIT",
     "keywords": [
