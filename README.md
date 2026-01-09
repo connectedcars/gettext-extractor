@@ -27,7 +27,7 @@ npm install gettext-extractor
 Let's start with a code example:
 
 ```javascript
-const { GettextExtractor, JsExtractors, HtmlExtractors } = require('gettext-extractor');
+const { GettextExtractor, JsExtractors, HtmlExtractors, RegexExtractors } = require('gettext-extractor');
 
 let extractor = new GettextExtractor();
 
@@ -54,6 +54,15 @@ extractor
         HtmlExtractors.elementContent('translate, [translate]')
     ])
     .parseFilesGlob('./src/**/*.html');
+
+extractor
+    .createRegexParser([
+        RegexExtractors.addCondition({
+            regex: /\_translate\((.*)\)/i,
+            text: 1
+        })
+    ])
+    .parseFilesGlob('./src/**/*.tmpl');
 
 extractor.savePotFile('./messages.pot');
 
