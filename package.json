@@ -26,7 +26,8 @@
         "test": "jest --config jest.json",
         "test:e2e": "jest --config jest.e2e.json",
         "lint": "tslint src/**/*.ts{,x}",
-        "build": "tsc"
+        "build": "tsc",
+        "prepublishOnly": "npm run build"
     },
     "engines": {
         "node": ">=20"
