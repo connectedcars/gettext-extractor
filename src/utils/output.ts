@@ -3,7 +3,8 @@ import { Chalk } from 'chalk';
 
 let chalk: Chalk | undefined;
 try {
-    chalk = require('chalk');
+    const chalkPackage = require('chalk');
+    chalk = chalkPackage?.default || chalkPackage;
 } catch (e) { /* falls back to default colored output */ }
 
 export abstract class OutputUtils {
