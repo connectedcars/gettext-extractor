@@ -1,5 +1,8 @@
 import * as fs from 'fs';
-import * as pofile from 'pofile';
+import PO = require('pofile');
+
+type PoHeaders = PO['headers'];
+type PoItem = InstanceType<typeof PO.Item>;
 
 import { CatalogBuilder, IContext, IMessage } from './builder';
 import { JsParser, IJsExtractorFunction } from './js/parser';
@@ -67,10 +70,10 @@ export class GettextExtractor {
         return this.builder.getMessagesByContext(context);
     }
 
-    public getPotString(headers: Partial<pofile.IHeaders> = {}): string {
+    public getPotString(headers: PoHeaders = {}): string {
         Validate.optional.object({headers});
 
-        let po = new (<any>pofile)();
+        let po = new PO();
         po.items = this.getPofileItems();
         po.headers = {
           'Content-Type': 'text/plain; charset=UTF-8',
@@ -79,14 +82,14 @@ export class GettextExtractor {
         return po.toString();
     }
 
-    public savePotFile(fileName: string, headers?: Partial<pofile.IHeaders>): void {
+    public savePotFile(fileName: string, headers?: PoHeaders): void {
         Validate.required.nonEmptyString({fileName});
         Validate.optional.object({headers});
 
         fs.writeFileSync(fileName, this.getPotString(headers));
     }
 
-    public savePotFileAsync(fileName: string, headers?: Partial<pofile.IHeaders>): Promise<any> {
+    public savePotFileAsync(fileName: string, headers?: PoHeaders): Promise<any> {
         Validate.required.nonEmptyString({fileName});
         Validate.optional.object({headers});
 
@@ -108,9 +111,9 @@ export class GettextExtractor {
         new StatsOutput(this.getStats()).print();
     }
 
-    private getPofileItems(): pofile.Item[] {
+    private getPofileItems(): PoItem[] {
         return this.getMessages().map(message => {
-            let item = new pofile.Item();
+            let item = new PO.Item();
 
             item.msgid = message.text as string;
             item.msgid_plural = message.textPlural as string;
