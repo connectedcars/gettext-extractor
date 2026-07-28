@@ -38,13 +38,13 @@
         "glob": "11.1.0",
         "parse5": "5 - 6",
         "pofile": "^1.1.0",
-        "typescript": "^5.4.0"
+        "typescript": "^6.0.0"
     },
     "devDependencies": {
         "@types/jest": "^30.0.0",
         "@types/node": "^20.9.0",
         "jest": "^30.0.0",
-        "ts-jest": "^29.4.0",
+        "ts-jest": "^29.4.12",
         "tslint": "^5.11.0"
     }
 }

@@ -1,11 +1,13 @@
 {
     "compilerOptions": {
         "outDir": "dist/",
+        "rootDir": "src/",
         "target": "ES6",
         "module": "commonjs",
         "declaration": true,
         "newLine": "LF",
-        "strict": true
+        "strict": true,
+        "types": ["node", "jest"]
     },
     "files": [
         "src/index.ts"
